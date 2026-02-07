@@ -1,3 +1,11 @@
+---
+title: Security Guarantees
+description: Security goals, product non-goals and threat-reduction strategy
+product: bv (BlindVault)
+type: security
+tags: [guarantee, compliance, trust, threat-model]
+---
+
 # Security Guarantees
 
 BV enforces strict separation of secrets and keys.

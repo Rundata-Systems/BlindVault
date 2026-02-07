@@ -1,3 +1,11 @@
+---
+title: System Overview
+description: Components, Responsibilities, data flow and data isolation
+product: bv (BlindVault)
+type: architecture
+tags: [secrets, encryption, reference]
+---
+
 # System Overview
 
 BV consists of three actors:

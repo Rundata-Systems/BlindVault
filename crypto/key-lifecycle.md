@@ -1,3 +1,11 @@
+---
+title: Key Lifecycle
+description: Lifecycle guarantees ensure limited blast radius
+product: bv (BlindVault)
+type: reference
+tags: [rotation, zeroization, mlock, memory, custody, hkdf, derivation, wrapping, envelope, hierarchy]
+---
+
 # Key Lifecycle
 
 Keys are never persistently stored in plaintext.

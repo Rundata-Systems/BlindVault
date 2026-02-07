@@ -1,3 +1,11 @@
+---
+title: Key Hierarchy
+description: Explains tier-structure envelope minimising blast radius
+product: bv (BlindVault)
+type: reference
+tags: [encryption, hierarchy, envelope, hkdf, rotation, isolation, wrapping]
+---
+
 # Key Hierarchy
 
 BV uses hierarchical envelope encryption.

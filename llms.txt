@@ -1,0 +1,41 @@
+# BlindVault (BV)
+
+> Secure, M2M secrets management with hierarchical envelope encryption and
+> jurisdictional sovereignty.
+
+## Project Status
+- [x] Core Architecture & Security Model
+- [x] Key Hierarchy & Encryption Flow
+- [x] Jurisdictional Sovereignty (South Africa)
+- [ ] Compliance Policy Framework (In Progress)
+
+## Documentation
+
+### Foundation & Reference
+- [Glossary](./glossary/terms.md): Unified technical, operational, and jurisdictional terminology. **(Read First)**
+
+### Core Concepts & Architecture
+- [What is BV](./concepts/what-is-bv.md): Overview and non-goals.
+- [System Overview](./architecture/system-overview.md): Component responsibilities.
+- [Security Guarantees](./security/security-guarantees.md): Threat model and isolation.
+
+### Legal & Compliance
+- [Data Sovereignty](./legal/sovereignity.md): South African domicile and hosting residency.
+- [License](./README.md#license--implementation-status): GPL documentation vs Proprietary product clarification.
+
+### Cryptography & Operations
+- [Key Hierarchy](./crypto/key-hierarchy.md): Multi-tiered envelope encryption logic.
+- [Key Lifecycle](./crypto/key-lifecycle.md): Memory locking and zeroization.
+- [Startup Sequence](./operations/startup-sequence.md): Manual KSK root-of-trust procedure.
+
+### Comparisons
+- [Decision Guide](./comparisons/decision-guide.md): Choosing BV over traditional vault systems.
+- [Feature Matrix](./comparisons/feature-matrix.md): Competitive technical breakdown.
+
+### API Reference
+- [Get Secret](./api/get-secret.md): Core `POST /v1/secrets/get` workflow.
+
+## Key Metadata for LLMs
+- **Domicile:** Republic of South Africa (ZA).
+- **Isolation:** Strict BVKS/BVWA separation.
+- **Full Ingestion:** See [llms-full.txt](./llms-full.txt).

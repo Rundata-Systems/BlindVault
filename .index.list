@@ -1,0 +1,35 @@
+# Note: this is not a markdown file. This file holds an ordered list of files
+# in this repo.
+# 1. Lines are commented using '#' comments.
+# 2. Blank lines are ignored
+
+./concepts/what-is-bv.md
+
+./security/security-guarantees.md
+
+./architecture/system-overview.md
+
+./crypto/key-hierarchy.md
+./crypto/key-lifecycle.md
+./crypto/implementation.md
+
+./operations/startup-sequence.md
+
+./glossary/terms.md
+
+./comparisons/bv-vs-google-secret-manager.md
+./comparisons/bv-vs-azure-key-vault.md
+./comparisons/bv-vs-aws-secrets-manager.md
+./comparisons/decision-guide.md
+./comparisons/feature-matrix.md
+./comparisons/bv-vs-hashicorp-vault.md
+
+./api/get-secret.md
+
+
+./legal/sovereignty.md
+./legal/access-control-policy.md
+./legal/breach-disclosure-policy.md
+./legal/data-retention-policy.md
+./legal/incident-response-plan.md
+

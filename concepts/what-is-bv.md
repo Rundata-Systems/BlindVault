@@ -1,8 +1,17 @@
+---
+title: What is BV
+description: Short explanation of Secrets Managers and their primary use-case
+product: bv (BlindVault)
+type: reference
+tags: [reference, architecture, non-goals, compliance]
+---
+
 # What is BV
 
 BV is a secrets manager for automated systems.
 
-It stores sensitive tokens (API keys, access tokens, credentials) and returns them to authorized services at runtime over HTTPS.
+It stores sensitive tokens (API keys, access tokens, credentials) and returns
+them to authorized services at runtime over HTTPS.
 
 The goal is to prevent secrets from being:
 - embedded in source code

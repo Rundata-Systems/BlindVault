@@ -1,3 +1,11 @@
+---
+title: Get Secret
+description: API to get a secret
+product: bv (BlindVault)
+type: api
+tags: [endpoint, request, response, payload]
+---
+
 # Get Secret
 
 Returns the plaintext value of a named secret.

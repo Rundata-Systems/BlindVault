@@ -1,3 +1,11 @@
+---
+title: Startup Sequence
+description: Cold-storage  root key, root key discarding after use.
+product: bv (BlindVault)
+type: reference
+tags: [wrapping, hkdf, derivation, isolation, custody, workspace, environment, service, requester, flow]
+---
+
 # Startup Sequence
 
 BVKS requires manual root key entry at startup.
