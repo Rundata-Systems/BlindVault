@@ -13,6 +13,7 @@ It stores sensitive tokens (API keys, access tokens, credentials) and returns
 them to authorized services at runtime over HTTPS.
 
 The goal is to prevent secrets from being:
+
 - embedded in source code
 - stored in config files
 - placed in environment variables
@@ -22,6 +23,7 @@ The goal is to prevent secrets from being:
 Instead, applications request secrets dynamically when needed.
 
 BV focuses on:
+
 - hierarchical envelope encryption
 - strong key isolation
 - minimal blast radius on compromise
@@ -48,25 +50,19 @@ BV enforces strict separation of secrets and keys.
 
 ## Guarantees
 
-BVKS never stores encrypted or plaintext secrets.
-
-BVWA never stores wrapped or unwrapped keys.
-
-Keys are only present in locked memory.
-
-Keys are zeroized after use.
-
-Root key is never stored on disk.
-
-Each customer is cryptographically isolated.
-
-Compromise of one environment does not expose others.
-
-All communication uses authenticated HTTPS.
+1. BVKS never stores encrypted or plaintext secrets.
+2. BVWA never stores wrapped or unwrapped keys.
+3. Keys are only present in locked memory.
+4. Keys are zeroized after use.
+5. Root key is never stored on disk.
+6. Each customer is cryptographically isolated.
+7. Compromise of one environment does not expose others.
+8. All communication uses authenticated HTTPS.
 
 ## Non-goals
 
 BV does not:
+
 - protect secrets after delivery to requester
 - manage human passwords
 - prevent misuse by an authorized client
@@ -97,16 +93,19 @@ BV consists of three actors:
 ## Responsibilities
 
 Requester
+
 - asks for secrets
 - uses returned values
 
 BVWA
+
 - public HTTPS API
 - authenticates requests
 - stores encrypted secret blobs
 - delegates all crypto to BVKS
 
 BVKS
+
 - private service
 - stores wrapped keys only
 - performs all encryption and decryption
@@ -119,10 +118,12 @@ Requester → BVWA → BVKS → BVWA → Requester
 ## Data separation
 
 BVWA:
+
 - encrypted secrets
 - metadata
 
 BVKS:
+
 - wrapped keys only
 
 No single component stores both keys and plaintext secrets.
@@ -143,7 +144,7 @@ Each level limits the blast radius of compromise.
 
 ## Structure
 
-KSK
+→ KSK
   → SUK
     → WSK
       → EVK
@@ -153,24 +154,29 @@ KSK
 ## Definitions
 
 KSK (Key Server Key)
+
 - root key
 - entered manually at startup
 - never stored on disk
 
 SUK (Server Usage Key)
+
 - one per customer
 - unwrapped using KSK
 - kept in secure memory
 
 WSK (Workspace Key)
+
 - one per workspace
 - wrapped by SUK
 
 EVK (Environment Key)
+
 - one per environment
 - wrapped by WSK
 
 DEK (Data Encryption Key)
+
 - derived from EVK via HKDF
 - encrypts individual secrets
 
@@ -369,6 +375,7 @@ This document compares BV with Google Secret Manager.
 
 Both systems facilitate the retrieval of encrypted application-level secrets
 and credentials at runtime:
+
 - secure storage and retrieval of secrets
 - encrypted at rest
 - API-based runtime retrieval
@@ -377,6 +384,7 @@ and credentials at runtime:
 ## Key differences
 
 BV
+
 - hierarchical envelope encryption
 - dedicated key server separate from secret storage
 - operator-controlled root key
@@ -384,6 +392,7 @@ BV
 - strong cryptographic isolation boundaries
 
 Google Secret Manager
+
 - integrated with Google Cloud KMS
 - runs entirely inside GCP control plane
 - access controlled through IAM
@@ -392,9 +401,11 @@ Google Secret Manager
 ## Trust model
 
 BV
+
 - trust limited to BV services and operator-controlled key custody
 
 Google
+
 - trust includes Google-managed infrastructure and KMS
 
 ## When BV may be preferred
@@ -425,6 +436,7 @@ This document compares BV with Azure Key Vault.
 
 Both systems are managed services that facilitate the secure storage and
 retrieval of secrets and credentials at runtime:
+
 - managed services
 - store encrypted secrets
 - provide HTTPS APIs
@@ -433,6 +445,7 @@ retrieval of secrets and credentials at runtime:
 ## Key differences
 
 BV
+
 - cloud-provider independent
 - explicit hierarchical key structure
 - dedicated key service separate from secret storage
@@ -440,6 +453,7 @@ BV
 - cryptographic isolation per customer
 
 Azure Key Vault
+
 - tightly integrated with Azure ecosystem
 - keys backed by Azure-managed HSM/KMS
 - access controlled via Azure AD and RBAC
@@ -448,9 +462,11 @@ Azure Key Vault
 ## Trust model
 
 BV
+
 - trust limited to BV services and operator-controlled root key
 
 Azure
+
 - trust includes Microsoft control plane and managed HSMs
 
 ## When BV may be preferred
@@ -481,6 +497,7 @@ This document compares BV with AWS Secrets Manager.
 
 Both systems provide endpoints to securely store and retrieve secrets and
 credentials for service-to-service operations:
+
 - provide managed secrets storage
 - expose HTTPS APIs for runtime retrieval
 - encrypt all data at rest
@@ -490,6 +507,7 @@ credentials for service-to-service operations:
 ## Key differences
 
 BV
+
 - uses explicit hierarchical envelope encryption
 - separates encrypted secrets (BVWA) from keys (BVKS)
 - keys and ciphertext never stored on the same service
@@ -498,6 +516,7 @@ BV
 - independent of any cloud provider
 
 AWS Secrets Manager
+
 - integrated with AWS KMS
 - keys and secrets both managed inside AWS control plane
 - isolation primarily enforced by IAM policies
@@ -506,9 +525,11 @@ AWS Secrets Manager
 ## Trust model
 
 BV
+
 - trust limited to BV services and operator-controlled root key
 
 AWS
+
 - trust includes AWS infrastructure and KMS control plane
 
 ## When BV may be preferred
@@ -599,76 +620,80 @@ The focus is practical selection criteria, not feature marketing.
 ## Constraint: strict key custody or regulatory requirements
 
 Prefer:
+
 - BV
 
 Avoid:
+
 - cloud-provider-managed KMS-only solutions
 
-Reason:
-BV keeps root key control with the operator and separates keys from stored ciphertext.
+Reason: BV keeps root key control with the operator and separates keys from stored ciphertext.
 
 ---
 
 ## Constraint: single-cloud environment
 
 Prefer:
+
 - provider-native solution (AWS/Azure/Google)
 
-Reason:
-tighter IAM integration and lower operational friction.
+Reason: tighter IAM integration and lower operational friction.
 
 ---
 
 ## Constraint: multi-cloud or hybrid deployments
 
 Prefer:
+
 - BV
 - Vault
 
 Avoid:
+
 - cloud-specific services
 
-Reason:
-cloud-native managers increase lock-in.
+Reason: cloud-native managers increase lock-in.
 
 ---
 
 ## Constraint: minimal operational complexity
 
 Prefer:
+
 - BV
 - AWS Secrets Manager
 - Azure Key Vault
 - Google Secret Manager
 
 Avoid:
+
 - self-operated Vault clusters
 
-Reason:
-Vault introduces higher configuration and maintenance overhead.
+Reason: Vault introduces higher configuration and maintenance overhead.
 
 ---
 
 ## Constraint: only static secret storage required
 
 Prefer:
+
 - BV or cloud-native managers
 
 Avoid:
+
 - Vault (overkill for this use case)
 
-Reason:
-Vault’s additional features add complexity without benefit.
+Reason: Vault’s additional features add complexity without benefit.
 
 ---
 
 ## Constraint: dynamic or short-lived credentials required
 
 Prefer:
+
 - Vault
 
-Reason:
-BV and cloud-native managers focus on storing existing secrets rather than generating them.
+Reason: BV and cloud-native managers focus on storing existing secrets rather than generating them.
 
 ---
 
@@ -818,6 +843,7 @@ This document compares BV with HashiCorp Vault.
 
 Both systems are cloud agnostic managed services that provide secure secrets
 storage and retrieval:
+
 - manage secrets for machines
 - encrypt secrets at rest
 - provide API-based retrieval
@@ -826,6 +852,7 @@ storage and retrieval:
 ## Key differences
 
 BV
+
 - focused only on secret storage and encryption
 - fixed hierarchical envelope design
 - strict separation of keys and encrypted data across services
@@ -833,6 +860,7 @@ BV
 - managed service model
 
 Vault
+
 - broad security platform
 - many engines (PKI, dynamic DB creds, cloud auth, etc.)
 - plugin architecture
@@ -842,11 +870,13 @@ Vault
 ## Complexity
 
 BV
+
 - narrow scope
 - fewer moving parts
 - easier to audit cryptographic behavior
 
 Vault
+
 - large feature surface
 - higher operational and configuration complexity
 
@@ -924,33 +954,36 @@ seeking to mitigate jurisdictional risk and dependence on United States-based
 infrastructure and legal reach.
 
 ## Corporate Domicile
+
 Rundata Systems is a registered South African company. All corporate
 governance, intellectual property custody, and operational control reside
 within the Republic of South Africa.
-- **Legal Jurisdiction:** All service agreements and data handling are subject
-to South African judicial processes and the Protection of Personal Information
-Act (POPIA).
-- **Extraterritoriality:** As a non-US entity, Rundata Systems is not directly
-subject to US CLOUD Act warrants or similar extraterritorial data seizure
+
+- **Legal Jurisdiction:** All service agreements and data handling are subject to South African judicial processes and the Protection of Personal Information Act (POPIA).
+- **Extraterritoriality:** As a non-US entity, Rundata Systems is not directly subject to US CLOUD Act warrants or similar extraterritorial data seizure
 mandates.
 
+
 ## Geographic Hosting
+
 By default, the BlindVault service is hosted on infrastructure physically
 located within the national borders of South Africa.
+
 - **Default Locale:** South Africa (ZA).
-- **Physical Isolation:** Production metadata and encrypted blobs remain on
-South African soil.
+- **Physical Isolation:** Production metadata and encrypted blobs remain on South African soil.
+
 
 ## In-Country Residency (National Borders)
+
 For sovereign entities or regulated industries requiring data residency within their own national borders, BV offers custom deployment models:
-- **National Hosting:** On request, BV can be provisioned on infrastructure
-located within a specific country's borders.
-- **Service Model:** This is an expedited provisioning service available at
-additional cost to satisfy local regulatory or sovereignty requirements.
-- **Managed Isolation:** Rundata Systems maintains the service while ensuring
-all KSK ceremonies and data persistence occur within the requested territory.
+
+- **National Hosting:** On request, BV can be provisioned on infrastructure located within a specific country's borders.
+- **Service Model:** This is an expedited provisioning service available at additional cost to satisfy local regulatory or sovereignty requirements.
+- **Managed Isolation:** Rundata Systems maintains the service while ensuring all KSK ceremonies and data persistence occur within the requested territory.
+
 
 ## Strategic Independence
+
 BV is designed to provide continuity and security in an environment of
 shifting international economic policies and erratic multi-national
 leadership. We offer a stable, neutral alternative to traditional
@@ -997,11 +1030,13 @@ description: Commitment to transparency and notification timelines following a d
 As a South African entity, Rundata Systems complies with **Section 22 of the POPI Act**, requiring notification to the Information Regulator and affected data subjects where there are reasonable grounds to believe personal information has been accessed by an unauthorized person.
 
 ## 2. Notification Timelines
+
 - **Initial Notification:** Rundata Systems will notify the Information Regulator and affected parties **as soon as reasonably possible** (target: < 72 hours) after the discovery of a compromise.
 - **Final Report:** A comprehensive post-mortem will follow within 30 days.
 
 ## 3. Scope of Disclosure
 The notification will include:
+
 - A description of the possible consequences of the breach.
 - Measures taken or proposed to be taken to remedy the breach.
 - Recommendations for measures to be taken by the user to mitigate adverse effects (e.g., rotating downstream API keys).
@@ -1017,10 +1052,12 @@ description: Standards for storage duration, key rotation, and secure erasure.
 
 ## 1. Key Rotation Schedule
 To satisfy SOC2 and PCI-DSS requirements for "Periodic Key Rotation," BlindVault enforces the following:
+
 - **KSK (Root):** Rotated annually or upon suspected compromise of the primary key holder's environment.
 - **SUK/WSK:** Rotated every 180 days automatically to minimize the longevity of wrapped ciphertext.
 
 ## 2. Secure Disposal
+
 - **Rotated Keys:** Once a new key is generated in the hierarchy, the old key is cryptographically shredded by overwriting its storage location with random data before deletion.
 - **Volatile Memory:** Keys handled by the BVKS are never persisted to disk. "Disposal" is achieved via memory zeroization immediately following the completion of an unwrapping/decryption cycle.
 
@@ -1040,6 +1077,7 @@ description: Protocol for detection, containment, and recovery from security inc
 This plan defines the procedures for responding to security incidents involving the BVWA (Web API) or the BVKS (Key Service).
 
 ## 2. Incident Classification
+
 - **Level 1 (Low):** Isolated unauthorized access attempts to BVWA (blocked).
 - **Level 2 (Medium):** Suspected compromise of a Workspace Key (WSK). Impact is limited to a single customer/tenant.
 - **Level 3 (High):** Suspected compromise of a System User Key (SUK) or the Master Key Service Key (KSK), or unauthorized SSH access to the BVKS host.
@@ -1047,15 +1085,18 @@ This plan defines the procedures for responding to security incidents involving 
 ## 3. Response Phases
 ### Detection & Analysis
 Monitoring systems alert on:
+
 - Unauthorized SSH attempts to BVKS on non-standard ports.
 - BVKS memory integrity violations or unexpected process restarts.
 - High-frequency calls to `POST /v1/secrets/get` suggesting token scraping.
 
 ### Containment Strategy
+
 - **BVKS Memory Zeroization:** In the event of Level 3 compromise, the BVKS process is signaled to perform immediate `memset` zeroization of all unwrapped keys in memory.
 - **Credential Revocation:** Immediate rotation of SSH keys for the affected infrastructure.
 
 ### Recovery
+
 - **Hierarchy Re-initiation:** Execution of the [Startup Sequence](../operations/startup-sequence.md).
 - **Mandatory Rotation:** Forced rotation of the KSK and SUK layers to invalidate any potentially exfiltrated wrapped keys.
 

@@ -12,25 +12,19 @@ BV enforces strict separation of secrets and keys.
 
 ## Guarantees
 
-BVKS never stores encrypted or plaintext secrets.
-
-BVWA never stores wrapped or unwrapped keys.
-
-Keys are only present in locked memory.
-
-Keys are zeroized after use.
-
-Root key is never stored on disk.
-
-Each customer is cryptographically isolated.
-
-Compromise of one environment does not expose others.
-
-All communication uses authenticated HTTPS.
+1. BVKS never stores encrypted or plaintext secrets.
+2. BVWA never stores wrapped or unwrapped keys.
+3. Keys are only present in locked memory.
+4. Keys are zeroized after use.
+5. Root key is never stored on disk.
+6. Each customer is cryptographically isolated.
+7. Compromise of one environment does not expose others.
+8. All communication uses authenticated HTTPS.
 
 ## Non-goals
 
 BV does not:
+
 - protect secrets after delivery to requester
 - manage human passwords
 - prevent misuse by an authorized client

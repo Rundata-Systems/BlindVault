@@ -14,6 +14,7 @@ It stores sensitive tokens (API keys, access tokens, credentials) and returns
 them to authorized services at runtime over HTTPS.
 
 The goal is to prevent secrets from being:
+
 - embedded in source code
 - stored in config files
 - placed in environment variables
@@ -23,6 +24,7 @@ The goal is to prevent secrets from being:
 Instead, applications request secrets dynamically when needed.
 
 BV focuses on:
+
 - hierarchical envelope encryption
 - strong key isolation
 - minimal blast radius on compromise

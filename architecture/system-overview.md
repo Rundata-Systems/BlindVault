@@ -17,16 +17,19 @@ BV consists of three actors:
 ## Responsibilities
 
 Requester
+
 - asks for secrets
 - uses returned values
 
 BVWA
+
 - public HTTPS API
 - authenticates requests
 - stores encrypted secret blobs
 - delegates all crypto to BVKS
 
 BVKS
+
 - private service
 - stores wrapped keys only
 - performs all encryption and decryption
@@ -39,10 +42,12 @@ Requester → BVWA → BVKS → BVWA → Requester
 ## Data separation
 
 BVWA:
+
 - encrypted secrets
 - metadata
 
 BVKS:
+
 - wrapped keys only
 
 No single component stores both keys and plaintext secrets.

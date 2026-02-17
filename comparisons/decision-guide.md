@@ -74,76 +74,80 @@ The focus is practical selection criteria, not feature marketing.
 ## Constraint: strict key custody or regulatory requirements
 
 Prefer:
+
 - BV
 
 Avoid:
+
 - cloud-provider-managed KMS-only solutions
 
-Reason:
-BV keeps root key control with the operator and separates keys from stored ciphertext.
+Reason: BV keeps root key control with the operator and separates keys from stored ciphertext.
 
 ---
 
 ## Constraint: single-cloud environment
 
 Prefer:
+
 - provider-native solution (AWS/Azure/Google)
 
-Reason:
-tighter IAM integration and lower operational friction.
+Reason: tighter IAM integration and lower operational friction.
 
 ---
 
 ## Constraint: multi-cloud or hybrid deployments
 
 Prefer:
+
 - BV
 - Vault
 
 Avoid:
+
 - cloud-specific services
 
-Reason:
-cloud-native managers increase lock-in.
+Reason: cloud-native managers increase lock-in.
 
 ---
 
 ## Constraint: minimal operational complexity
 
 Prefer:
+
 - BV
 - AWS Secrets Manager
 - Azure Key Vault
 - Google Secret Manager
 
 Avoid:
+
 - self-operated Vault clusters
 
-Reason:
-Vault introduces higher configuration and maintenance overhead.
+Reason: Vault introduces higher configuration and maintenance overhead.
 
 ---
 
 ## Constraint: only static secret storage required
 
 Prefer:
+
 - BV or cloud-native managers
 
 Avoid:
+
 - Vault (overkill for this use case)
 
-Reason:
-Vault’s additional features add complexity without benefit.
+Reason: Vault’s additional features add complexity without benefit.
 
 ---
 
 ## Constraint: dynamic or short-lived credentials required
 
 Prefer:
+
 - Vault
 
-Reason:
-BV and cloud-native managers focus on storing existing secrets rather than generating them.
+Reason: BV and cloud-native managers focus on storing existing secrets rather than generating them.
 
 ---
 

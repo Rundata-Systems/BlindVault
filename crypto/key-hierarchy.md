@@ -14,7 +14,7 @@ Each level limits the blast radius of compromise.
 
 ## Structure
 
-KSK
+→ KSK
   → SUK
     → WSK
       → EVK
@@ -24,24 +24,29 @@ KSK
 ## Definitions
 
 KSK (Key Server Key)
+
 - root key
 - entered manually at startup
 - never stored on disk
 
 SUK (Server Usage Key)
+
 - one per customer
 - unwrapped using KSK
 - kept in secure memory
 
 WSK (Workspace Key)
+
 - one per workspace
 - wrapped by SUK
 
 EVK (Environment Key)
+
 - one per environment
 - wrapped by WSK
 
 DEK (Data Encryption Key)
+
 - derived from EVK via HKDF
 - encrypts individual secrets
 

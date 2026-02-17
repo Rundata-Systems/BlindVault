@@ -14,6 +14,7 @@ This document compares BV with AWS Secrets Manager.
 
 Both systems provide endpoints to securely store and retrieve secrets and
 credentials for service-to-service operations:
+
 - provide managed secrets storage
 - expose HTTPS APIs for runtime retrieval
 - encrypt all data at rest
@@ -23,6 +24,7 @@ credentials for service-to-service operations:
 ## Key differences
 
 BV
+
 - uses explicit hierarchical envelope encryption
 - separates encrypted secrets (BVWA) from keys (BVKS)
 - keys and ciphertext never stored on the same service
@@ -31,6 +33,7 @@ BV
 - independent of any cloud provider
 
 AWS Secrets Manager
+
 - integrated with AWS KMS
 - keys and secrets both managed inside AWS control plane
 - isolation primarily enforced by IAM policies
@@ -39,9 +42,11 @@ AWS Secrets Manager
 ## Trust model
 
 BV
+
 - trust limited to BV services and operator-controlled root key
 
 AWS
+
 - trust includes AWS infrastructure and KMS control plane
 
 ## When BV may be preferred

@@ -14,6 +14,7 @@ This document compares BV with Google Secret Manager.
 
 Both systems facilitate the retrieval of encrypted application-level secrets
 and credentials at runtime:
+
 - secure storage and retrieval of secrets
 - encrypted at rest
 - API-based runtime retrieval
@@ -22,6 +23,7 @@ and credentials at runtime:
 ## Key differences
 
 BV
+
 - hierarchical envelope encryption
 - dedicated key server separate from secret storage
 - operator-controlled root key
@@ -29,6 +31,7 @@ BV
 - strong cryptographic isolation boundaries
 
 Google Secret Manager
+
 - integrated with Google Cloud KMS
 - runs entirely inside GCP control plane
 - access controlled through IAM
@@ -37,9 +40,11 @@ Google Secret Manager
 ## Trust model
 
 BV
+
 - trust limited to BV services and operator-controlled key custody
 
 Google
+
 - trust includes Google-managed infrastructure and KMS
 
 ## When BV may be preferred

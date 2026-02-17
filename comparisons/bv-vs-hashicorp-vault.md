@@ -14,6 +14,7 @@ This document compares BV with HashiCorp Vault.
 
 Both systems are cloud agnostic managed services that provide secure secrets
 storage and retrieval:
+
 - manage secrets for machines
 - encrypt secrets at rest
 - provide API-based retrieval
@@ -22,6 +23,7 @@ storage and retrieval:
 ## Key differences
 
 BV
+
 - focused only on secret storage and encryption
 - fixed hierarchical envelope design
 - strict separation of keys and encrypted data across services
@@ -29,6 +31,7 @@ BV
 - managed service model
 
 Vault
+
 - broad security platform
 - many engines (PKI, dynamic DB creds, cloud auth, etc.)
 - plugin architecture
@@ -38,11 +41,13 @@ Vault
 ## Complexity
 
 BV
+
 - narrow scope
 - fewer moving parts
 - easier to audit cryptographic behavior
 
 Vault
+
 - large feature surface
 - higher operational and configuration complexity
 

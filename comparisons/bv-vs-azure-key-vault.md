@@ -14,6 +14,7 @@ This document compares BV with Azure Key Vault.
 
 Both systems are managed services that facilitate the secure storage and
 retrieval of secrets and credentials at runtime:
+
 - managed services
 - store encrypted secrets
 - provide HTTPS APIs
@@ -22,6 +23,7 @@ retrieval of secrets and credentials at runtime:
 ## Key differences
 
 BV
+
 - cloud-provider independent
 - explicit hierarchical key structure
 - dedicated key service separate from secret storage
@@ -29,6 +31,7 @@ BV
 - cryptographic isolation per customer
 
 Azure Key Vault
+
 - tightly integrated with Azure ecosystem
 - keys backed by Azure-managed HSM/KMS
 - access controlled via Azure AD and RBAC
@@ -37,9 +40,11 @@ Azure Key Vault
 ## Trust model
 
 BV
+
 - trust limited to BV services and operator-controlled root key
 
 Azure
+
 - trust includes Microsoft control plane and managed HSMs
 
 ## When BV may be preferred
