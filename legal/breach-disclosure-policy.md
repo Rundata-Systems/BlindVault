@@ -1,6 +1,7 @@
 ---
 title: Breach Disclosure Policy
 description: Commitment to transparency and notification timelines following a data breach.
+website: [legal/breach-disclosure-policy](https://blindvault.co.za/html/legal/breach-disclosure-policy.html)
 product: bv (BlindVault)
 type: policy
 tags: [compliance, legal, POPIA, disclosure]

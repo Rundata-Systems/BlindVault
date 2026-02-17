@@ -1,6 +1,7 @@
 ---
 title: BV vs HashiCorp Vault
 description: Comparison of BV and Hashicorp Vault
+website: [comparisons/bv-vs-hashicorp-vault](https://blindvault.co.za/html/comparisons/bv-vs-hashicorp-vault.html)
 product: bv (BlindVault)
 type: comparison
 tags: [vault, alternatives, trade-offs]

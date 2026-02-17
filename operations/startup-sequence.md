@@ -1,6 +1,7 @@
 ---
 title: Startup Sequence
 description: Cold-storage  root key, root key discarding after use.
+website: [operations/startup-sequence](https://blindvault.co.za/html/operations/startup-sequence.html)
 product: bv (BlindVault)
 type: reference
 tags: [wrapping, hkdf, derivation, isolation, custody, workspace, environment, service, requester, flow]

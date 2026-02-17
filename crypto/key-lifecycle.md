@@ -1,6 +1,7 @@
 ---
 title: Key Lifecycle
 description: Lifecycle guarantees ensure limited blast radius
+website: [crypto/key-lifecycle](https://blindvault.co.za/html/crypto/key-lifecycle.html)
 product: bv (BlindVault)
 type: reference
 tags: [rotation, zeroization, mlock, memory, custody, hkdf, derivation, wrapping, envelope, hierarchy]

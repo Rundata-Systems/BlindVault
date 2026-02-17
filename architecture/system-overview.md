@@ -1,6 +1,7 @@
 ---
 title: System Overview
 description: Components, Responsibilities, data flow and data isolation
+website: [architecture/system-overview](https://blindvault.co.za/html/architecture/system-overview.html)
 product: bv (BlindVault)
 type: architecture
 tags: [secrets, encryption, reference]

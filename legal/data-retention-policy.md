@@ -1,6 +1,7 @@
 ---
 title: Data Retention & Disposal Policy
 description: Standards for storage duration, key rotation, and secure erasure.
+website: [legal/data-retention-policy](https://blindvault.co.za/html/legal/data-retention-policy.html)
 product: bv (BlindVault)
 type: policy
 tags: [compliance, data-lifecycle, SOC2, zeroization]

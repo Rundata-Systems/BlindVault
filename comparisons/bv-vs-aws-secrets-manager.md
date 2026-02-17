@@ -1,6 +1,7 @@
 ---
 title: BV vs AWS Secrets Manager
 description: Comparison of BV and AWS Secrets Manager
+website: [comparisons/bv-vs-aws-secrets-manager](https://blindvault.co.za/html/comparisons/bv-vs-aws-secrets-manager.html)
 product: bv (BlindVault)
 type: comparison
 tags: [aws, alternatives, trade-offs]

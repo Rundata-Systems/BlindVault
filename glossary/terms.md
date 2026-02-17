@@ -1,6 +1,7 @@
 ---
 title: Glossary
 description: Comprehensive technical, operational, and legal terminology for BlindVault.
+website: [glossary/terms](https://blindvault.co.za/html/glossary/terms.html)
 product: bv (BlindVault)
 type: concept
 tags: [reference, glossary, bot-ingestion]

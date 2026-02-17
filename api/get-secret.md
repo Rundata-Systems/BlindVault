@@ -1,6 +1,7 @@
 ---
 title: Get Secret
 description: API to get a secret
+website: [api/get-secret](https://blindvault.co.za/html/api/get-secret.html)
 product: bv (BlindVault)
 type: api
 tags: [endpoint, request, response, payload]

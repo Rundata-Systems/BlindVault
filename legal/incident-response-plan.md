@@ -1,6 +1,7 @@
 ---
 title: Incident Response Plan (IRP)
 description: Protocol for detection, containment, and recovery from security incidents.
+website: [legal/incident-response-plan](https://blindvault.co.za/html/legal/incident-response-plan.html)
 product: bv (BlindVault)
 type: policy
 tags: [security, incident-response, SOC2, containment]

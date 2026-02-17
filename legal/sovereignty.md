@@ -1,6 +1,7 @@
 ---
 title: Data Sovereignty & Jurisdictional Risk
 description: Corporate domicile, judicial governance, and geographic hosting guarantees.
+website: [legal/sovereignty](https://blindvault.co.za/html/legal/sovereignty.html)
 product: bv (BlindVault)
 type: security
 tags: [compliance, sovereignty, jurisdiction, legal]

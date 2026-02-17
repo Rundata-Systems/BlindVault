@@ -1,6 +1,7 @@
 ---
 title: What is BV
 description: Short explanation of Secrets Managers and their primary use-case
+website: [concepts/what-is-bv](https://blindvault.co.za/html/concepts/what-is-bv.html)
 product: bv (BlindVault)
 type: reference
 tags: [reference, architecture, non-goals, compliance]

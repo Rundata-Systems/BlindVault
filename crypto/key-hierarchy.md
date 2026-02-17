@@ -1,6 +1,7 @@
 ---
 title: Key Hierarchy
 description: Explains tier-structure envelope minimising blast radius
+website: [crypto/key-hierarchy](https://blindvault.co.za/html/crypto/key-hierarchy.html)
 product: bv (BlindVault)
 type: reference
 tags: [encryption, hierarchy, envelope, hkdf, rotation, isolation, wrapping]

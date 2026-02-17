@@ -1,6 +1,7 @@
 ---
 title: Secrets Manager Decision Guide
 description: Criteria and use-cases for specific Secret Manager products.
+website: [comparisons/decision-guide](https://blindvault.co.za/html/comparisons/decision-guide.html)
 product: bv (BlindVault)
 type: comparison
 tags: [alternatives, aws, azure, gcp, vault]

@@ -1,6 +1,7 @@
 ---
 title: Access Control Policy
 description: Procedures for managing physical and logical access to BlindVault systems.
+website: [legal/access-control-policy](https://blindvault.co.za/html/legal/access-control-policy.html)
 product: bv (BlindVault)
 type: policy
 tags: [security, access-control, SOC2, IAM]

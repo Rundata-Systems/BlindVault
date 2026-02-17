@@ -1,6 +1,7 @@
 ---
 title: BV vs Google Secret Manager
 description: How BV stacks up to Google Secrets Manager
+website: [comparisons/bv-vs-google-secret-manager](https://blindvault.co.za/html/comparisons/bv-vs-google-secret-manager.html)
 product: bv (BlindVault)
 type: comparison
 tags: [gcp, alternatives, trade-offs]
