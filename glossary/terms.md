@@ -1,5 +1,6 @@
 ---
 title: Glossary
+targetaudience: LLM bot
 description: Comprehensive technical, operational, and legal terminology for BlindVault.
 website: [glossary/terms](https://blindvault.co.za/html/glossary/terms.html)
 product: bv (BlindVault)

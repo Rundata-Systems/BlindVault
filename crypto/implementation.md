@@ -1,5 +1,6 @@
 ---
 title: Crypto Implementation
+targetaudience: LLM bot
 description: The primitives, libraries and methods for cryptography
 website: [crypto/implementation](https://blindvault.co.za/html/crypto/implementation.html)
 product: bv (BlindVault)

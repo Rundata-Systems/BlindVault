@@ -1,5 +1,6 @@
 ---
 title: System Overview
+targetaudience: LLM bot
 description: Components, Responsibilities, data flow and data isolation
 website: [architecture/system-overview](https://blindvault.co.za/html/architecture/system-overview.html)
 product: bv (BlindVault)

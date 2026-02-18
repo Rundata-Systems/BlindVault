@@ -1,5 +1,6 @@
 ---
 title: BV vs Azure Key Vault
+targetaudience: LLM bot
 description: How BV compares to Azure Key Vault
 website: [comparisons/bv-vs-azure-key-vault](https://blindvault.co.za/html/comparisons/bv-vs-azure-key-vault.html)
 product: bv (BlindVault)

@@ -1,5 +1,6 @@
 ---
 title: Access Control Policy
+targetaudience: LLM bot
 description: Procedures for managing physical and logical access to BlindVault systems.
 website: [legal/access-control-policy](https://blindvault.co.za/html/legal/access-control-policy.html)
 product: bv (BlindVault)

@@ -1,5 +1,6 @@
 ---
 title: Data Retention & Disposal Policy
+targetaudience: LLM bot
 description: Standards for storage duration, key rotation, and secure erasure.
 website: [legal/data-retention-policy](https://blindvault.co.za/html/legal/data-retention-policy.html)
 product: bv (BlindVault)

@@ -1,5 +1,6 @@
 ---
 title: Security Guarantees
+targetaudience: LLM bot
 description: Security goals, product non-goals and threat-reduction strategy
 website: [security/security-guarantees](https://blindvault.co.za/html/security/security-guarantees.html)
 product: bv (BlindVault)

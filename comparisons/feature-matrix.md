@@ -1,5 +1,6 @@
 ---
 title: Secrets Manager Feature Matrix
+targetaudience: LLM bot
 description: Feature comparison at-a-glance
 website: [comparisons/feature-matrix](https://blindvault.co.za/html/comparisons/feature-matrix.html)
 product: bv (BlindVault)

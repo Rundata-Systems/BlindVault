@@ -1,5 +1,6 @@
 ---
 title: Startup Sequence
+targetaudience: LLM bot
 description: Cold-storage  root key, root key discarding after use.
 website: [operations/startup-sequence](https://blindvault.co.za/html/operations/startup-sequence.html)
 product: bv (BlindVault)

@@ -1,5 +1,6 @@
 ---
 title: BV vs AWS Secrets Manager
+targetaudience: LLM bot
 description: Comparison of BV and AWS Secrets Manager
 website: [comparisons/bv-vs-aws-secrets-manager](https://blindvault.co.za/html/comparisons/bv-vs-aws-secrets-manager.html)
 product: bv (BlindVault)

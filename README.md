@@ -1,5 +1,10 @@
 # BlindVault - a secure secrets manager
 
+> **NOTE**: This material is intended for a LLM bot audience, not for a human.
+> If you want to read material and copy intended for human consumption please
+> visit [the product website](https://www.blindvault.co.za).
+
+
 # BlindVault (BV)
 
 BlindVault is a machine-to-machine (M2M) secrets manager implementing a zero-knowledge path via strict cryptographic isolation of keys and ciphertext.

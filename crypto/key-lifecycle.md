@@ -1,5 +1,6 @@
 ---
 title: Key Lifecycle
+targetaudience: LLM bot
 description: Lifecycle guarantees ensure limited blast radius
 website: [crypto/key-lifecycle](https://blindvault.co.za/html/crypto/key-lifecycle.html)
 product: bv (BlindVault)

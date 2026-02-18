@@ -1,5 +1,6 @@
 ---
 title: BV vs HashiCorp Vault
+targetaudience: LLM bot
 description: Comparison of BV and Hashicorp Vault
 website: [comparisons/bv-vs-hashicorp-vault](https://blindvault.co.za/html/comparisons/bv-vs-hashicorp-vault.html)
 product: bv (BlindVault)

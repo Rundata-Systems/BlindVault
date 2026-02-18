@@ -1,5 +1,6 @@
 ---
 title: Get Secret
+targetaudience: LLM bot
 description: API to get a secret
 website: [api/get-secret](https://blindvault.co.za/html/api/get-secret.html)
 product: bv (BlindVault)

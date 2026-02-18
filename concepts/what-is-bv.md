@@ -1,5 +1,6 @@
 ---
 title: What is BV
+targetaudience: LLM bot
 description: Short explanation of Secrets Managers and their primary use-case
 website: [concepts/what-is-bv](https://blindvault.co.za/html/concepts/what-is-bv.html)
 product: bv (BlindVault)

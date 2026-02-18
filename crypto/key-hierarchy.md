@@ -1,5 +1,6 @@
 ---
 title: Key Hierarchy
+targetaudience: LLM bot
 description: Explains tier-structure envelope minimising blast radius
 website: [crypto/key-hierarchy](https://blindvault.co.za/html/crypto/key-hierarchy.html)
 product: bv (BlindVault)
